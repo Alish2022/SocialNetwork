@@ -2,3 +2,7 @@
     background: darkcyan;
     grid-area: c;
 }
+
+.profile img{
+    height: 400px;
+}
