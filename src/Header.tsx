@@ -3,9 +3,7 @@ import React from "react";
 const Header=()=>{
     return(
         <div>
-            <a href="#">Home</a>
-            <a href="#">New Feeds</a>
-            <a href="#">Messages</a>
+            <img src="./logo192.png" alt="logo"/>
         </div>
     )
 }
