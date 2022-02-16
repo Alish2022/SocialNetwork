@@ -1,4 +1,14 @@
 .nav{
-    background: antiquewhite;
+    padding: 10px;
+    background: cornflowerblue;
     grid-area: n;
+}
+
+.nav a{
+    text-decoration: none;
+    color:white;
+}
+
+.active{
+    color:gold;
 }
