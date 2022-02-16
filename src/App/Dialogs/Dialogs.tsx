@@ -23,7 +23,6 @@ const Dialogs= ()=> {
                 <div className={s.message}>Hi</div>
                 <div className={s.message}>YYYY</div>
                 <div className={s.message}>GGGGG</div>
-
             </div>
         </div>
     );
