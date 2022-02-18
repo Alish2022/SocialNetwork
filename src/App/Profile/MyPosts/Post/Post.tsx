@@ -3,6 +3,7 @@ import style from './Post.module.css';
 
 type postPropsType={
     message:string
+    id:string
 }
 
 const Post= (props:postPropsType)=> {

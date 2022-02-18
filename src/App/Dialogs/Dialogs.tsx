@@ -2,27 +2,53 @@ import React from 'react';
 import s from './Dialogs.module.css'
 import {NavLink} from "react-router-dom";
 
+type dialogItemPropsType={
+    name:string
+    id:string
+}
+
+const DialogItem:React.FC<dialogItemPropsType> = (props) => {
+    return (
+        <div className={s.dialogItem}>
+            <NavLink to="/dialogs/1">{props.name}</NavLink>
+        </div>
+    );
+};
+
+type messagePropsType={
+    message:string
+    id:string
+}
+
+const Message:React.FC<messagePropsType> = (props) => {
+    return (
+        <div>
+            <div className={s.message}>{props.message}</div>
+        </div>
+    );
+};
+
+let dialogItemData:Array<dialogItemPropsType>=[
+    {name:"Борис",id:"1"},
+    {name:"Иван",id:"2"},
+    {name:"Алексей",id:"3"},
+    {name:"Евгений",id:"4"}
+]
+
+let messageData:Array<messagePropsType>=[
+    {message:"Hi",id:"1"},
+    {message:"YYY",id:"2"},
+    {message:"GGG",id:"3"}
+]
+
 const Dialogs= ()=> {
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsList}>
-                <div className={s.dialogItem}>
-                    <NavLink to="/dialogs/1">Борис</NavLink>
-                </div>
-                <div className={s.dialogItem}>
-                    <NavLink to="/dialogs/2">Иван</NavLink>
-                </div>
-                <div className={s.dialogItem}>
-                    <NavLink to="/dialogs/3">Алексей</NavLink>
-                </div>
-                <div className={s.dialogItem}>
-                    <NavLink to="/dialogs/4">Евгений</NavLink>
-                </div>
+                {dialogItemData.map(el=><DialogItem name={el.name} id={el.id}/>)}
             </div>
             <div className={s.messages}>
-                <div className={s.message}>Hi</div>
-                <div className={s.message}>YYYY</div>
-                <div className={s.message}>GGGGG</div>
+                {messageData.map(el=><Message id={el.id} message={el.message}/>)}
             </div>
         </div>
     );
